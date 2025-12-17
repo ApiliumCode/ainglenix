@@ -1,6 +1,7 @@
 rec {
   # releases here https://github.com/rust-lang/rust/blob/master/RELEASES.md
-  version = "1.45.2";
+  # Updated to 1.75 for Rust 2021 edition support
+  version = "1.75.0";
 
   # the target used by rust when compiling wasm
   wasm-target = "wasm32-unknown-unknown";
@@ -8,8 +9,9 @@ rec {
   # the target used by all linux when we don't have a specific target
   generic-linux-target = "x86_64-unknown-linux-gnu";
 
-  # the target used by all mac
+  # the target used by all mac (x86_64 and ARM64)
   generic-mac-target = "x86_64-apple-darwin";
+  generic-mac-arm-target = "aarch64-apple-darwin";
 
   # set this to "info" to debug compiler cache misses due to fingerprinting
   # @see https://github.com/rust-lang/cargo/issues/4961#issuecomment-359189913
